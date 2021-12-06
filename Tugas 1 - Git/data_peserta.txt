@@ -1,0 +1,6 @@
+Data Peserta Sanbercode Bootcamp Laravel
+1. Nama: Fadhil Rausyanfikr
+2. Email: fadhil.rausyanfikr@gmail.com
+3. Sistem Operasi yang digunakan: Windows
+4. Akun Gitlab/Github: SkandarEverest
+5. Akun Telegram: Skandar Everest
