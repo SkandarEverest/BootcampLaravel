@@ -1,0 +1,85 @@
+Jawaban no 1
+Membuat database
+create database myshop;
+
+Jawaban no 2
+Menggunakan database
+use myshop;
+
+Membuat tabel users
+create table users(
+    -> id int(8) primary key auto_increment,
+    -> name varchar(255),
+    -> email varchar(255),
+    -> password varchar(255)
+    -> );
+
+describe users;
+
+Membuat tabel categories
+create table categories(
+    -> id int(8) primary key auto_increment,
+    -> name varchar(255)
+    -> );
+
+
+Membuat tabel items
+create table items(
+    -> id int(8) primary key auto_increment,
+    -> name varchar(255),
+    -> description varchar(255),
+    -> price int,
+    -> stock int,
+    -> category_id int(8),
+    -> foreign key(category_id) references categories(id)
+    -> );
+
+describe items;
+
+
+Jawaban no 3
+
+Memasukkan data kedalam tabel USERS dengan perintah SQL "INSERT INTO"
+
+insert into users(name, email, password) values("John Doe", "john@doe.com", "john123");
+insert into users(name, email, password) values("Jane Doe", "jane@doe.com", "jenita123");
+
+
+select * from users;
+
+Memasukkan data kedalam tabel CATEGORIES dengan perintah SQL "INSERT INTO"
+
+insert into categories(name) values("gadget"), ("cloth"), ("men"), ("women"), ("branded");
+select * from categories;
+
+
+Memasukkan data kedalam tabel ITEMS dengan perintah SQL "INSERT INTO"
+
+insert into items(name, description, price, stock, category_id) values("Sumsang b50", "hape keren dari merek sumsang", 4000000, 100, 1);
+insert into items(name, description, price, stock, category_id) values("Uniklooh", "baju keren dari brand ternama", 500000, 50, 2);
+insert into items(name, description, price, stock, category_id) values("IMHO Watch", "jam tangan anak yang jujur banget", 2000000, 10, 1);
+
+
+select * from items;
+
+
+Jawaban no 4
+
+a.  Mengambil data USERS
+select id, name, email from users;
+
+b.  Mengambil data ITEMS
+1. Query tampil data dengan harga diatas 1.000.000 
+	select * from items where price>1000000;
+2. Query tampil data dengan kata kunci "watch"
+	select * from items where name like '%watch%';
+
+c.  Menampilkan data ITEMS join dengan CATEGORIES
+	select items.name, items.description, items.price, items.stock, items.category_id, categories.name as kategori from items inner join categories on items.category_id = categories.id;
+
+
+Jawaban no 5
+select * from items;
+
+Mengubah data pada tabel ITEMS untuk items sumbang b50 di kolom PRICE menjadi 2.500.000
+update items set price=2500000 where id=1;
